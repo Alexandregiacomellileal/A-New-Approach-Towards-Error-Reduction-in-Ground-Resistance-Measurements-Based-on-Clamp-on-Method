@@ -1,10 +1,9 @@
 # A-New-Approach-Towards-Error-Reduction-in-Ground-Resistance-Measurements-Based-on-Clamp-on-Method
-Config files for my GitHub profile.
 
 
-The first file contains the SBC Wind Park`s grounding system partition to application of proposed method.
+The first file contains the partition of the SBC Wind Park earthing system groups to apply the proposed method.
 
-The second file contains the grounding electrical circuit of the SBC wind farm.
+The second file contains all the equivalent circuit derived from the mathematical modeling of the SBC wind farm with the insertion of a source that represents the voltage injected by the clamp-on meter in the circuit  aiming to measure the OD1 wind turbine resistance.
 
 The third contains the aterrad3.m file, function to calculate the values of the readings to be obtained using the clamp on the cable down to the WTG grounding system, from the values of the impedance of each ground loop and the WTG grounding resistances.
 
