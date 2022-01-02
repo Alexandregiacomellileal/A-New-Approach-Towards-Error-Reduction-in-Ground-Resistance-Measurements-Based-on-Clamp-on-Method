@@ -1,8 +1,8 @@
-%% SoluÁ„o final do mestrado. Avalia um grupo de X aerogeradores do parque eÛlico S„o Bento.
-%% Entra com o n˙mero de ciclos para geraÁ„o de valores aleatÛrios de entrada Rproj na soluÁ„o analitica desenvolvida ATERRAD3, calculando para cada conjunto de entrada aleatÛrios os valores Rmed a serem medidos com o alicate terrÙmetro.
+%% Proposed solution. Avalia um grupo de X aerogeradores do parque e√≥lico S√£o Bento.
+%% Entra com o n√∫mero de ciclos para gera√ß√£o de valores aleat√≥rios de entrada Rproj na solu√ß√£o analitica desenvolvida ATERRAD3, calculando para cada conjunto de entrada aleat√≥rios os valores Rmed a serem medidos com o alicate terr√¥metro.
 %% Utiliza o banco de dados gerados anteriormente (Rmed) para entrada de uma rede neural executando seu treinamento
-%% Utiliza o banco de dados resultante da soluÁ„o analitica (Rprojs) como as saÌdas para treinamento de uma rede neural 
-%% Ao final realiza um teste sob dados Reais de projeto do grupo 1 de 5 aerogeradores do Parque S„o Bento e Olho Dagua
+%% Utiliza o banco de dados resultante da solu√ß√£o analitica (Rprojs) como as sa√≠das para treinamento de uma rede neural 
+%% Ao final realiza um teste sob dados Reais de projeto do grupo 1 de 5 aerogeradores do Parque S√£o Bento e Olho Dagua
 
 
 %% Limpeza
@@ -10,13 +10,13 @@ clc
 clear all
 
 
-%% CabeÁalho e configuraÁ„o:
+%% Cabe√ßalho e configura√ß√£o:
 
-%Dados de projeto de aerogeradores do Parque EÛlico S„o Bento do Sul
+%Dados de projeto de aerogeradores do Parque E√≥lico S√£o Bento do Sul
 
-disp('ConfiguraÁıes');
+disp('Configura√ß√µes');
 disp('   ');
-disp('Grupo de aerogeradores do Parque S„o Bento do Norte:   ');
+disp('Grupo de aerogeradores do Parque S√£o Bento do Norte:   ');
 disp('SB13 => 1   ');
 disp('OD15 SB09 => 2   ');
 disp('OD04 SB10 SB11 => 3   ');
@@ -25,12 +25,12 @@ disp('OD14 SB15 SB14 => 5   ');
 disp('OD10 OD09 OD08 OD07 SB12 OD06 OD05 => 6   ');
 disp('OD01 SB01 SB02 SB03 SB05 SB04 OD02 OD03 SB06 SB08 SB07 => 7   ');
 disp('   ')
-grupo=input('Entre com o n˙mero do grupo de aerogeradores:    ');
+grupo=input('Entre com o n√∫mero do grupo de aerogeradores:    ');
 disp('   ');
-taxa_erro_max=input('Entre com a percentagem m·xima para o erro de mediÁ„o:    ');
+taxa_erro_max=input('Entre com a percentagem m√°xima para o erro de medi√ß√£o:    ');
 disp('   ');
-disp('Teste 100% aleatÛrio Rf (distribuiÁ„o uniforme) => 1   ');
-disp('Teste aleatÛrio Rf (distribuiÁ„o uniforme) + valores extremos Rf (melhor e pior caso) => 2   ');
+disp('Teste 100% aleat√≥rio Rf (distribui√ß√£o uniforme) => 1   ');
+disp('Teste aleat√≥rio Rf (distribui√ß√£o uniforme) + valores extremos Rf (melhor e pior caso) => 2   ');
 disp('   ');
 tipo_teste=input('Entre com o tipo de teste final da rede neural    ');
 
@@ -101,15 +101,15 @@ elseif grupo==6 %WTG: OD10; OD09; OD08; OD07; SB12; OD06; OD05
         Lseriecaboprojeto=[0.002408014288980 0.000787816968305 0.000868349369509 0.000882355004501 0.001120450799 0.001232495879304 0.000802140913183 0.000224090159873];
         Rseriecaboprojeto=[0.1955 0.069 0.0713 0.0759 0.092 0.1012 0.0644 0.0184];
         if          tipo_teste==1
-                    lim_inf_proj=0.44;%valor mÌnimo das amostras para treinamento RNA
-                    lim_sup_proj=2.5;%valor m·ximo das amostras para treinamento RNA    
-                    lim_inf_test=0.44;%valor mÌnimo das amostras de teste
-                    lim_sup_test=2.5;%valor m·ximo das amostras de teste
+                    lim_inf_proj=0.44;%valor m√≠nimo das amostras para treinamento RNA
+                    lim_sup_proj=2.5;%valor m√°ximo das amostras para treinamento RNA    
+                    lim_inf_test=0.44;%valor m√≠nimo das amostras de teste
+                    lim_sup_test=2.5;%valor m√°ximo das amostras de teste
         else
-                    lim_inf_proj=0.3;%valor mÌnimo das amostras para treinamento RNA
-                    lim_sup_proj=2.5;%valor m·ximo das amostras para treinamento RNA 
-                    lim_inf_test=1;%valor mÌnimo das amostras de teste
-                    lim_sup_test=2.5;%valor m·ximo das amostras de teste
+                    lim_inf_proj=0.3;%valor m√≠nimo das amostras para treinamento RNA
+                    lim_sup_proj=2.5;%valor m√°ximo das amostras para treinamento RNA 
+                    lim_inf_test=1;%valor m√≠nimo das amostras de teste
+                    lim_sup_test=2.5;%valor m√°ximo das amostras de teste
         end
         Numero_aerogeradores=7;
         Numero_treinamento=100;
@@ -120,23 +120,23 @@ elseif grupo==7 %WTG: OD01; SB01; SB02; SB03; SB05; SB04; OD02; OD03; SB06; SB08
         Lseriecaboprojeto=[0.000213904 0.000773493 0.000930261 0.000799594 0.002151775 0.000787817 0.00148969 0.000888085 0.001059972 0.001983071 0.000830789 0.000218997];
         Rseriecaboprojeto=[0.0184 0.069 0.0805 0.0736 0.184 0.069 0.1196 0.0713 0.0851 0.161 0.069 0.0184];
         if          tipo_teste==1
-                    lim_inf_proj=0.44;%valor mÌnimo das amostras para treinamento RNA 
-                    lim_sup_proj=2.5;%valor m·ximo das amostras para treinamento RNA         
-                    lim_inf_test=0.44;%valor mÌnimo das amostras de teste 
-                    lim_sup_test=2.5;%valor m·ximo das amostras de teste
+                    lim_inf_proj=0.44;%valor m√≠nimo das amostras para treinamento RNA 
+                    lim_sup_proj=2.5;%valor m√°ximo das amostras para treinamento RNA         
+                    lim_inf_test=0.44;%valor m√≠nimo das amostras de teste 
+                    lim_sup_test=2.5;%valor m√°ximo das amostras de teste
         else
-                    lim_inf_proj=0.11;%valor mÌnimo das amostras para treinamento RNA
-                    lim_sup_proj=2.7;%valor m·ximo das amostras para treinamento RNA
-                    lim_inf_test=1;%valor mÌnimo das amostras de teste
-                    lim_sup_test=2.5;%valor m·ximo das amostras de teste
+                    lim_inf_proj=0.11;%valor m√≠nimo das amostras para treinamento RNA
+                    lim_sup_proj=2.7;%valor m√°ximo das amostras para treinamento RNA
+                    lim_inf_test=1;%valor m√≠nimo das amostras de teste
+                    lim_sup_test=2.5;%valor m√°ximo das amostras de teste
         end
         Numero_aerogeradores=11;
         Numero_treinamento=100;
-else disp('Este grupo n„o existe')
+else disp('Este grupo n√£o existe')
 end
     
-ENTRADA_REDE_NEURAL=ones(Numero_aerogeradores,Numero_treinamento); %matriz que armazenar· os resultados do treinamento;
-SAIDA_REDE_NEURAL=ones(Numero_aerogeradores,Numero_treinamento); %matriz que armazenar· os resultados do treinamento;
+ENTRADA_REDE_NEURAL=ones(Numero_aerogeradores,Numero_treinamento); %matriz que armazenar√° os resultados do treinamento;
+SAIDA_REDE_NEURAL=ones(Numero_aerogeradores,Numero_treinamento); %matriz que armazenar√° os resultados do treinamento;
 
 verif=0;
 
@@ -148,12 +148,12 @@ Rwtgprojeto=[];
 RW_sup=RW.*lim_sup_proj; %limite superior sensibilidade
 RW_inf=RW.*lim_inf_proj; %limite inferior sensibilidade
 cont=1;
-while cont<(Numero_aerogeradores+1) %gera um array com  valores aleatÛrios para as ResistÍncias de projeto;
+while cont<(Numero_aerogeradores+1) %gera um array com  valores aleat√≥rios para as Resist√™ncias de projeto;
     Rwtgprojeto(cont)=RW_inf(cont) + (RW_sup(cont)-RW_inf(cont)).*rand(1);
     cont=cont+1;
 end
     
-%% Preenchimento do vetor Z para entrada na funÁ„o ATERRAD3
+%% Preenchimento do vetor Z para entrada na fun√ß√£o ATERRAD3
 Zdimensao=length(Rwtgprojeto)+2*length(Rshuntcaboprojeto);
 a=1;
 b=1;
@@ -170,7 +170,7 @@ Z(a)=Rshuntcaboprojeto(b)*2;
 a=a+1;
 Z(a)=Rshuntcaboprojeto(b)*2;
 
-%% Preenchimento do vetor LC para entrada na funÁ„o ATERRAD3
+%% Preenchimento do vetor LC para entrada na fun√ß√£o ATERRAD3
 LCdimensao=Zdimensao-1;
 LC=zeros(1,LCdimensao);
 a=1;
@@ -181,7 +181,7 @@ while b<length(Lseriecaboprojeto)+1
     b=b+1;
 end
 
-%% Preenchimento do vetor RC para entrada na funÁ„o ATERRAD3
+%% Preenchimento do vetor RC para entrada na fun√ß√£o ATERRAD3
 RCdimensao=LCdimensao;
 RC=zeros(1,RCdimensao);
 a=1;
@@ -192,13 +192,13 @@ while b<length(Rseriecaboprojeto)+1
     b=b+1;
 end
 
-v=0.056; % definiÁ„o da tens„o do alicate terrometro
-FREQ=1572; % definiÁ„o da frequencia de injeÁ„o do sinal do alicate terrometro
+v=0.056; % defini√ß√£o da tens√£o do alicate terrometro
+FREQ=1572; % defini√ß√£o da frequencia de inje√ß√£o do sinal do alicate terrometro
 
 %% Function aterrad 3
 RAT=[aterrad3(Z,RC,LC,FREQ,v)];
 
-%% Etapa de extraÁ„o das resistÍncias de aterramento que ser„o medidas nos aerogeradores
+%% Etapa de extra√ß√£o das resist√™ncias de aterramento que ser√£o medidas nos aerogeradores
 RES_MED_CLAMP=[];
 c=length(Z);
 a=1;
@@ -213,12 +213,12 @@ ENTRADA_REDE_NEURAL(1:Numero_aerogeradores,i)=RES_MED_CLAMP;
 SAIDA_REDE_NEURAL(1:Numero_aerogeradores,i)=Rwtgprojeto;
 i=i+1;
 end
-%% NormalizaÁ„o dos dados entre -1 e 1 para insers„o na rede neural;
+%% Normaliza√ß√£o dos dados entre -1 e 1 para insers√£o na rede neural;
 
 [ENTRADA_REDE_NEURAL_NORM,norm_e]=mapminmax(ENTRADA_REDE_NEURAL);
 [SAIDA_REDE_NEURAL_NORM,norm_s]=mapminmax(SAIDA_REDE_NEURAL);
 
-%% Etapa de programaÁ„o da rede neural:
+%% Etapa de programa√ß√£o da rede neural:
     net=newff(minmax(ENTRADA_REDE_NEURAL_NORM),[Numero_aerogeradores],{'purelin'}, 'trainlm')
     net.trainparam.epochs=1000;
     net.trainparam.goal=1e-10;
@@ -230,20 +230,20 @@ end
 
 %% Etapa de teste da rede neural.
 
-teste=round(Numero_treinamento*0.1);% Teste com 10% do n˙mero de ciclos de treinamento da rede neural.
+teste=round(Numero_treinamento*0.1);% Teste com 10% do n√∫mero de ciclos de treinamento da rede neural.
 i=1;%contador de teste
 while i<teste+1
 
   
-%% GeraÁ„o de valores teste variando em de -56% a +150% o valores das Resis. aterra. do projeto - quanto um projeto È confiavel 
+%% Gera√ß√£o de valores teste variando em de -56% a +150% o valores das Resis. aterra. do projeto - quanto um projeto √© confiavel 
 Rtwgprojeto=[];
 
 RW_sup=RW.*lim_sup_test; %limite superior dos valores de projeto - estudo de sensibilidade
 RW_inf=RW.*lim_inf_test; %limite inferior dos valores de projeto - estudo de sensibilidade
 cont=1;
 
-%Escolha do tipo de teste: 1- 100% amostras aleatÛrias  -----   2- Amostas
-%aleatÛrias + limite superior e limite inferior de todas as resistÍncias
+%Escolha do tipo de teste: 1- 100% amostras aleat√≥rias  -----   2- Amostas
+%aleat√≥rias + limite superior e limite inferior de todas as resist√™ncias
 if tipo_teste==2
         if i<teste-1
         while cont<(Numero_aerogeradores+1)
@@ -263,7 +263,7 @@ elseif tipo_teste==1
 else disp('ERRO');
 end
 
-%% Preenchimento do vetor Z para entrada na funÁ„o ATERRAD3
+%% Preenchimento do vetor Z para entrada na fun√ß√£o ATERRAD3
 Zdimensao=length(Rwtgprojeto)+2*length(Rshuntcaboprojeto);
 a=1;
 b=1;
@@ -280,7 +280,7 @@ Z(a)=Rshuntcaboprojeto(b)*2;
 a=a+1;
 Z(a)=Rshuntcaboprojeto(b)*2;
 
-%% Preenchimento do vetor LC para entrada na funÁ„o ATERRAD3
+%% Preenchimento do vetor LC para entrada na fun√ß√£o ATERRAD3
 LCdimensao=Zdimensao-1;
 LC=zeros(1,LCdimensao);
 a=1;
@@ -291,7 +291,7 @@ while b<length(Lseriecaboprojeto)+1
     b=b+1;
 end
 
-%% Preenchimento do vetor RC para entrada na funÁ„o ATERRAD3
+%% Preenchimento do vetor RC para entrada na fun√ß√£o ATERRAD3
 RCdimensao=LCdimensao;
 RC=zeros(1,RCdimensao);
 a=1;
@@ -302,13 +302,13 @@ while b<length(Rseriecaboprojeto)+1
     b=b+1;
 end
 
-v=0.056; % definiÁ„o da tens„o do alicate terrometro
-FREQ=1572; % definiÁ„o da frequencia de injeÁ„o do sinal do alicate terrometro
+v=0.056; % defini√ß√£o da tens√£o do alicate terrometro
+FREQ=1572; % defini√ß√£o da frequencia de inje√ß√£o do sinal do alicate terrometro
 
 %% Function aterrad 3
 RAT=[aterrad3(Z,RC,LC,FREQ,v)];
 
-%% Etapa de extraÁ„o das resistÍncias de aterramento que ser„o medidas nos aerogeradores
+%% Etapa de extra√ß√£o das resist√™ncias de aterramento que ser√£o medidas nos aerogeradores
 RES_MED_CLAMP=[];
 c=length(Z);
 a=1;
@@ -338,6 +338,6 @@ Erro_modulo=abs(Erro);
 Y=find(Erro_modulo>taxa_erro_max); %Aqui coloca a maxima taxa de erro permitida 
 verif=isempty(Y);%enquanto tiver algum erro acima disso na matriz, verif assume 0
 %std(Erro(:));
-err=immse(Y_teste,SAIDA_REDE_NEURAL_TESTE)%calcula o erro quadr·tico mÈdio (MSE) entre os arrays
+err=immse(Y_teste,SAIDA_REDE_NEURAL_TESTE)%calcula o erro quadr√°tico m√©dio (MSE) entre os arrays
 end
-disp('Erros de mediÁ„o abaixo de 10% - Rede Neural encontrada')
+disp('Erros de medi√ß√£o abaixo de 10% - Rede Neural encontrada')
