@@ -16,12 +16,12 @@ disp('OD01 SB01 SB02 SB03 SB05 SB04 OD02 OD03 SB06 SB08 SB07 => 7   ');
 disp('   ')
 grupo=input('Enter the WTG group number:    ');
 disp('   ');
-taxa_erro_max=input('Enter the maximum allowed APE:   ');
+taxa_erro_max=input('Enter the maximum allowable absolute percent error for the clamp-on meter readings:   ');
 disp('   ');
-disp('Random values to Rf for the final ANN check => 1   ');
-disp('Random and fixed (max-min) values to Rf for the final ANN check => 2   ');
+disp('Generate random Rf values for final ANN`s check => 1   ');
+disp('Generate random and fixed (max & min) Rf values for final ANN`s check => 2   ');
 disp('   ');
-tipo_teste=input('Enter sampling type for final ANN check ...:   ');
+tipo_teste=input('Enter sampling type for final ANN`s check ...:   ');
 
 if      grupo==1  %WTG: SB13
         RW=[1.1123]; 
