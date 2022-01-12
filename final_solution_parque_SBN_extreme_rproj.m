@@ -2,7 +2,7 @@
 %% Algorithm that uses an artificial neural network (ANN) to estimate the WTG's grounding resistance through the clamp-on meter readings values. 
 %% For the ANN to perform as expected, it is trained through computer simulations of the clamp-on meter method on a wind park electrical circuit using the aterrad3 function.
 
-%% Entries and settings:
+%% Settings:
 disp('Settings');
 disp('   ');
 disp('SBC`s WTG group selection:   ');
