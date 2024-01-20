@@ -1,5 +1,9 @@
 # A-New-Approach-Towards-Error-Reduction-in-Ground-Resistance-Measurements-Based-on-Clamp-on-Method
 
+## Associated research paper
+A New Approach for Ground Resistance Measurements in Onshore Wind Farms based on Clamp-On Meters and Artificial Neural Network
+
+## Overview
 This is the file folder for the article titled: A New Approach Towards Error Reduction in Ground Resistance Measurements Based on Clamp-on Method, recently submitted to the Electrical Power Systems Research journal (ELSEVIER).
 
 The first file "SBC Wind Park`s grounding system partition to application of proposed method.pdf" contains the grounding sub-systems into which the SBC Wind Park grounding system was divided to apply the proposed solution.
