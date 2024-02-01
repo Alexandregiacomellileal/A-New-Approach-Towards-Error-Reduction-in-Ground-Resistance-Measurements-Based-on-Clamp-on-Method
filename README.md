@@ -14,6 +14,4 @@ The third contains the "aterrad3.m" file, a function created in Matlab to calcul
 
 The last file "final_solution_parque_SBN_extreme_rproj.m", contains the proposed solution algorithm file that uses an artificial neural network (ANN) to estimate the WTG's grounding resistance through the clamp-on meter readings values. For the ANN to perform as expected, it is trained through computer simulations of the clamp-on meter method on a wind park electrical circuit using the aterrad3 function.
 
-![badge](https://img.shields.io/github/views/Alexandregiacomellileal/A-New-Approach-Towards-Error-Reduction-in-Ground-Resistance-Measurements-Based-on-Clamp-on-Method)
-
 
