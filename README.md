@@ -1,7 +1,5 @@
 # A-New-Approach-Towards-Error-Reduction-in-Ground-Resistance-Measurements-Based-on-Clamp-on-Method
 
-![](https://img.shields.io/github/views/Alexandregiacomellileal/A-New-Approach-Towards-Error-Reduction-in-Ground-Resistance-Measurements-Based-on-Clamp-on-Method)
-
 ## Associated research paper
 A New Approach for Ground Resistance Measurements in Onshore Wind Farms based on Clamp-On Meters and Artificial Neural Network
 
